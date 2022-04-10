@@ -21,28 +21,33 @@
 
 # ### 1) Importing the required libraries
 
-# In[147]:
+# In[54]:
 
 
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly
+import plotly.express as px
+import plotly.io as pio
+pio.renderers.default='notebook'
 from sklearn.preprocessing import LabelEncoder
 from copy import deepcopy
+import kaleido
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # ### 2) Reading the Data
 
-# In[148]:
+# In[3]:
 
 
 data = pd.read_csv("loans_full_schema.csv")
 data
 
 
-# In[149]:
+# In[4]:
 
 
 df = deepcopy(data)
@@ -50,7 +55,7 @@ df = deepcopy(data)
 
 # #### Lets take a look at dataset columns
 
-# In[150]:
+# In[5]:
 
 
 data.columns
@@ -60,7 +65,7 @@ data.columns
 
 # ### 3) Pre Processing
 
-# In[151]:
+# In[6]:
 
 
 data.describe()
@@ -68,20 +73,20 @@ data.describe()
 
 # ##### From the above describe data we can see the count of all the columns is not equal to the length of data.That implies the data has missing values.
 
-# In[152]:
+# In[7]:
 
 
 data.isnull().sum()
 
 
-# In[153]:
+# In[8]:
 
 
 print(data.isnull().any().value_counts(), "\n")
 print(f"The columns that have missing values are total {data.isnull().any().sum()}")
 
 
-# In[154]:
+# In[9]:
 
 
 null_columns = data.columns[data.isnull().sum() > 0].tolist()
@@ -90,7 +95,7 @@ null_columns
 
 # ##### Lets look at these columns with missing values and if the count of missing values is greater than 50%, we will drop that column
 
-# In[155]:
+# In[10]:
 
 
 drop_cols = data.loc[:,null_columns].isnull().sum()[data.loc[:,null_columns].isnull().sum().values > 5000].index.tolist()
@@ -99,7 +104,7 @@ drop_cols
 
 # ##### Lets drop the columns mentioned above
 
-# In[156]:
+# In[11]:
 
 
 data.drop(columns=drop_cols, axis=1, inplace = True)
@@ -107,7 +112,7 @@ null_columns = data.columns[data.isnull().sum() > 0].tolist()
 null_columns
 
 
-# In[157]:
+# In[12]:
 
 
 null_columns
@@ -115,7 +120,7 @@ null_columns
 
 # ##### For the above columns with null lets take a look and try to replace null with some value
 
-# In[158]:
+# In[13]:
 
 
 data["emp_title"].value_counts().index[0]
@@ -123,7 +128,7 @@ data["emp_title"].value_counts().index[0]
 
 # The emp_title column has mode as manager. Lets replace the NaNs with manager
 
-# In[159]:
+# In[14]:
 
 
 data['emp_title'].fillna(data["emp_title"].value_counts().index[0], inplace = True)
@@ -132,19 +137,19 @@ data['emp_title'].isna().sum()
 
 # ##### Lets look at emp_length column
 
-# In[160]:
+# In[15]:
 
 
 data['emp_length']
 
 
-# In[161]:
+# In[16]:
 
 
 data.emp_length.describe()
 
 
-# In[162]:
+# In[17]:
 
 
 data.emp_length.value_counts()
@@ -152,7 +157,7 @@ data.emp_length.value_counts()
 
 # The mode for the emp_length column is 10.0 and the mean is 5.930306. We will round this mean to 6.0 and replace NA with this mean
 
-# In[163]:
+# In[18]:
 
 
 data.emp_length.fillna(round(data.emp_length.mean()), inplace = True)
@@ -161,13 +166,13 @@ data.emp_length.isna().sum()
 
 # ##### Now debt_to_income column
 
-# In[164]:
+# In[19]:
 
 
 data.debt_to_income.describe()
 
 
-# In[165]:
+# In[20]:
 
 
 data.debt_to_income.value_counts()
@@ -175,14 +180,14 @@ data.debt_to_income.value_counts()
 
 # Replacing the NA with mean i.e 19.308192
 
-# In[166]:
+# In[21]:
 
 
 data.debt_to_income.fillna(data.debt_to_income.mean(),inplace = True)
 data.debt_to_income.isna().sum()
 
 
-# In[167]:
+# In[22]:
 
 
 null_columns
@@ -190,19 +195,19 @@ null_columns
 
 # ##### Now months_since_last_credit_inquiry columns need to be examined
 
-# In[168]:
+# In[23]:
 
 
 data.months_since_last_credit_inquiry
 
 
-# In[169]:
+# In[24]:
 
 
 data.months_since_last_credit_inquiry.describe()
 
 
-# In[170]:
+# In[25]:
 
 
 data.months_since_last_credit_inquiry.value_counts()
@@ -210,7 +215,7 @@ data.months_since_last_credit_inquiry.value_counts()
 
 # Again replace na with mean
 
-# In[171]:
+# In[26]:
 
 
 data.months_since_last_credit_inquiry.fillna(round(data.months_since_last_credit_inquiry.mean()), inplace = True)
@@ -219,13 +224,13 @@ data.months_since_last_credit_inquiry.isna().sum()
 
 # ##### Now num_accounts_120d_past_due to be examined
 
-# In[172]:
+# In[27]:
 
 
 data.num_accounts_120d_past_due
 
 
-# In[173]:
+# In[28]:
 
 
 data.num_accounts_120d_past_due.describe()
@@ -233,7 +238,7 @@ data.num_accounts_120d_past_due.describe()
 
 # As all the values in this columns are 0 we can drop this column
 
-# In[174]:
+# In[29]:
 
 
 data.drop('num_accounts_120d_past_due', inplace = True, axis = 1)
@@ -242,20 +247,20 @@ data
 
 # #### As seen in the num_accounts_120d_past_due column. A column can consists of all 0. Lets look at the numeric columns
 
-# In[175]:
+# In[30]:
 
 
 numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
 data_num = data.select_dtypes(include=numerics)
 
 
-# In[176]:
+# In[31]:
 
 
 data_num
 
 
-# In[177]:
+# In[32]:
 
 
 data_num.columns[(data_num == 0).all()]
@@ -263,13 +268,13 @@ data_num.columns[(data_num == 0).all()]
 
 # #### As we can see there are no columns with all zero values but there might be some columns with majority of zeros
 
-# In[178]:
+# In[33]:
 
 
 data_num.paid_late_fees.value_counts()
 
 
-# In[179]:
+# In[34]:
 
 
 zeroes = (data_num[data_num == 0].count(axis=0)/len(data_num.index))
@@ -278,14 +283,14 @@ zeroes[zeroes > 0.9]
 
 # The above columns have zeroes more than 90% of the total values. We can remove these columns
 
-# In[180]:
+# In[35]:
 
 
 data.drop(columns= zeroes[zeroes > 0.9].index.tolist(), axis = 1, inplace=True)
 data
 
 
-# In[181]:
+# In[36]:
 
 
 data.interest_rate
@@ -293,7 +298,7 @@ data.interest_rate
 
 # #### Convert the string object data columns to numerical categories
 
-# In[182]:
+# In[37]:
 
 
 data.info()
@@ -301,7 +306,7 @@ data.info()
 
 # ##### We will factorise the object datatypes columns
 
-# In[183]:
+# In[38]:
 
 
 obj_cols = data.select_dtypes(include=[object]).columns.tolist()
@@ -310,14 +315,14 @@ obj_cols
 
 # Except issue_month we will convert all object columns to factors
 
-# In[184]:
+# In[39]:
 
 
 obj_cols.pop(obj_cols.index('issue_month'))
 obj_cols
 
 
-# In[185]:
+# In[40]:
 
 
 df_copy = deepcopy(data)
@@ -485,6 +490,45 @@ ax = sns.lineplot(data = df_copy[['emp_length','interest_rate']].groupby('emp_le
 for i in int_rate:
     plt.text(i,int_rate[i] + 0.005,str(int_rate[i]))
 ax.figure.savefig('emp_length.jpg')
+
+
+# In[ ]:
+
+
+
+
+
+# In[44]:
+
+
+states = df_copy[['state','interest_rate']].groupby(by='state').mean()
+states.reset_index(inplace=True)
+states
+
+
+# In[59]:
+
+
+fig = px.choropleth(states,
+                    locations='state', 
+                    locationmode="USA-states", 
+                    scope="usa",
+                    color='interest_rate',
+                    color_continuous_scale="Viridis_r",labels = dict(zip(states.state, states.interest_rate)))
+# plotly.offline.plot(fig, include_plotlyjs=False, output_type='div')
+plotly.offline.plot(fig)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # ### 4) Modeling 
