@@ -1,0 +1,33 @@
+.img-text-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+img {
+    border: 1px solid black;
+}
+
+h3{
+    float: 'right';
+}
+table, th, td {
+    border:1px solid black;
+}
+
+.answer{
+    text-align: center; 
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.question{
+    font-weight: bold;
+}
+
+.answer-N{
+    text-align: center; 
+    vertical-align: middle;
+    font-weight: bold;
+    color: red;
+}

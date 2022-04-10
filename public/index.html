@@ -1,59 +1,123 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Case Study 1</title>
-        <link rel="stylesheet" href="css/main.css">
+        <title>Case Study 2</title>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <main>
             <header>
-                <h2>Case Study 1 for Stout</h2>
+                <h2>Case Study 2 for Stout</h2>
             </header>
         <div>
-            <p>This Dataset is for Lending Club. This Dataset consists of 10000 observations for 55 Columns.</p>               
-            <a href="https://www.openintro.org/data/index.php?data=loans_full_schema">View the Dataset</a>
+            <a href="https://www.dropbox.com/sh/xhy2fzjdvg3ykhy/AADAVKH9tgD_dWh6TZtOd34ia?dl=0">View the Dataset</a>
             
         </div>
         </main>
+        <h4>There is 1 dataset(csv) with 3 years worth of customer orders. There are 4 columns in the csv dataset:
+            index, CUSTOMER_EMAIL(unique identifier as hash), Net_Revenue, and Year. We shall use this data to answer some questions for each year.</h4>
+        <div>
+            <table style="width:100%">
+                <tr>
+                    <th>Question</th>
+                    <th>2015</th>
+                    <th>2016</th>
+                    <th>2017</th>
+                </tr>
+                <tr>
+                    <td class = "question">Total revenue for the current year</td>
+                    <td class = "answer">29036749.189999994</td>
+                    <td class = "answer">25730943.59</td>
+                    <td class = "answer">31417495.030000016</td>
+                </tr>
+                <tr>
+                    <td class = "question">New Customer Revenue</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">18245491.01</td>
+                    <td class = "answer">28776235.039999995</td>
+                </tr>
+                <tr>
+                    <td class = "question">Existing Customer Growth</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">20335.459999999963</td>
+                    <td class = "answer">-4844192.59</td>
+                </tr>
+                <tr>
+                    <td class = "question">Revenue lost from attrition</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">3305805.599999994</td>
+                    <td class = "answer">-5686551.440000016</td>
+                </tr>
+                <tr>
+                    <td class = "question">Existing Customer Revenue Current Year</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">7485452.58</td>
+                    <td class = "answer">2641259.99</td>
+                </tr>
+                <tr>
+                    <td class = "question">Existing Customer Revenue Prior Year</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">7465117.12</td>
+                    <td class = "answer">2620648.65</td>
+                </tr>
+                <tr>
+                    <td class = "question">Total Customers Current Year</td>
+                    <td class = "answer">231294</td>
+                    <td class = "answer">204646</td>
+                    <td class = "answer">249987</td>
+                </tr>
+                <tr>
+                    <td class = "question">Total Customers Previous Year</td>
+                    <td class = "answer">N/A</td>
+                    <td class = "answer">231294</td>
+                    <td class = "answer">204646</td>
+                </tr>
+                <tr>
+                    <td class = "question">New Customers</td>
+                    <td class = "answer">N/A</td>
+                    <td class = "answer">145062</td>
+                    <td class = "answer">229028</td>
+                </tr>
+                <tr>
+                    <td class = "question">Lost Customers</td>
+                    <td class = "answer">N/A</td>
+                    <td class = "answer">171710</td>
+                    <td class = "answer">183687</td>
+                </tr>
+                </table>
+            </div>
+
+
         <p>The Visualizations for this data set is as:</p>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
-        <div class = 'plot'> <h3>The graph below shows the interest rate for each state in USA. The interest rates are color coded and the higher the interest_rate the darker the color.<br>
-            You can hover on the map and pan zoom too to see the info for each state. We can see the highest interest rate is for Hawaii and second highest is for North Dakota.<br>
-            We can see there is not data for Iowa as the dataset doesnt contain any info for that state.
-        </h3>
-            <div id="2fa24e7b-f3c9-4d1a-88d8-68e3a8c6efda" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("2fa24e7b-f3c9-4d1a-88d8-68e3a8c6efda")) {                    Plotly.newPlot(                        "2fa24e7b-f3c9-4d1a-88d8-68e3a8c6efda",                        [{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"state=%{location}<br>interest_rate=%{z}<extra></extra>","locationmode":"USA-states","locations":["AK","AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA","HI","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY"],"name":"","z":[11.336969696969698,12.787540983606556,13.148428571428571,12.155686274509803,12.323593984962407,12.23331914893617,13.469779005524863,12.452631578947368,12.54,12.710601092896175,12.324580838323353,14.779428571428571,12.529736842105264,12.108089005235602,11.827696629213483,11.732247191011236,12.785876288659795,12.374479166666667,12.051814345991563,12.59008097165992,10.738846153846152,12.428081632653061,12.202012578616351,12.34364779874214,12.9925,12.8825,11.909464882943142,14.42357142857143,11.506964285714286,12.01127659574468,12.012041420118344,13.12860465116279,12.73613924050633,12.72717528373266,13.027100591715977,12.75814814814815,12.64723076923077,12.162919463087249,12.877735849056604,12.892,11.73,12.377185628742513,12.220421836228288,11.92672131147541,12.370153256704981,13.339565217391305,12.736595744680852,12.2446875,12.555,12.57157894736842],"type":"choropleth"}],                        {"coloraxis":{"colorbar":{"title":{"text":"interest_rate"}},"colorscale":[[0.0,"#fde725"],[0.1111111111111111,"#b5de2b"],[0.2222222222222222,"#6ece58"],[0.3333333333333333,"#35b779"],[0.4444444444444444,"#1f9e89"],[0.5555555555555556,"#26828e"],[0.6666666666666666,"#31688e"],[0.7777777777777778,"#3e4989"],[0.8888888888888888,"#482878"],[1.0,"#440154"]]},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"scope":"usa"},"legend":{"tracegroupgap":0},"margin":{"t":60},"template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}}},                        {"responsive": true}                    )                };                            </script>        </div>
-        
         <div class="img-text-container">
-            <p id = "heatmap" ><img src="heatmap.jpg" height = "800px" width = "800px" style="float: left;"><h3>The main goal of this project is to predict interest_rate from this dataset. To do so we will have to find features correlated to the interest_rate column.
-                For this we will use the heatmap Visualization. The features with color closer to blue are positively correlated with interest_rate and closer to yellow
-                are negatively correlated. From this graph we can say that the columns grade and sub_grade are most positively correlated to the target.</h3>
-            </p>
-        </div>
-        <div class = "img-text-container">
-            <p id = "issue"><img src="issue_month.jpg" height = "800px" width = "800px" style="float: left;"><h3>The issue_month column shows the month and year the loan was issued.
-                We can see from this bar graph on the left that the mean interest rate for the month of Feb in year 2018 was slight higher than the two neighbour months i.e Jan and March.
+            <p id = "new_revenue" ><img src="net_revenue.jpg" height = "800px" width = "800px" style="float: left;"><h3>This graph on the left compares the total net revenue 
+                for the years 2015, 2016, 2017. We can say the total net_revenue decreased in the year 2016 and then increased in 2017.
             </h3>
             </p>
         </div>
         <div class = "img-text-container">
-            <p id = "dist"><img src="dist.jpg" height = "800px" width = "800px" style="float: left;"><h3>For better predictions we need to know what kind of distribution the interest_rate 
-                column belongs to. From the distribution graph on the left we can say that the distribution has the highest density for interest rates of log 9.93.
+            <p id = "16_new_v/s_existing"><img src="16_new_exis.jpg" height = "800px" width = "800px" style="float: left;"><h3>This graph on left compares the total revenue for new and
+                existing customers in the year 2016. We can say that the revenue collected from existing customer is approx 41% that of new customer.
             </h3>
             </p>
         </div>
         <div class = "img-text-container">
-            <p id = "grade"><img src="grade.jpg" height = "800px" width = "800px" style="float: left;"><h3>As the sub_grade and grade columns were the most correlated with the interest_rate column, it makes sense to 
-                check their graphs. The sub_grade column has 32 unique values so plotting that would require more time. For now we will use the grade column. The grade column has 7 unique values 
-                ranging from A - G with A being the highest grade. When we plot interest_rate vs grade barplot, we can see as the grade goes lower, the interest_rate increases. This contradicts the positive correlation.
-                This happens because while encoding the strings with labels we labelled A as 0 and G as 6. So technically A is the highest grade but its label is 0.
+            <p id = "17_new_v/s_existing"><img src="17_new_exis.jpg" height = "800px" width = "800px" style="float: left;"><h3>This graph on left compares the total revenue for new and
+                existing customers in the year 2017. We can say that the revenue collected from existing customer is approx 9% that of new customer. This ratio is pretty low as compared 
+                to previous year 2016.
             </h3>
             </p>
         </div>
         <div class = "img-text-container">
-            <p id = "emp_length"><img src="emp_length.jpg" height = "800px" width = "800px" style="float: left;"><h3>The emp_title column had too many unique values so we will consider the emp_length column.
-                The emp_length column has been capped at 10 as max_value and anything greater than 10 will be rounded to 10. Thus this column only as 11 unique values, 0 - 10. These 
-                values are the number of years an employee has been in the company. We would expect the interest rate to go low as years increase but the graph says otherwise. Although,
-                there may be other factors affecting the interest rate like grade and other features, We can check about that in future.
+            <p id = "mean"><img src="mean_yr.jpg" height = "800px" width = "800px" style="float: left;"><h3>The graph on the left depicts the mean revenue for each customer per year.
+                Although the total revenue of 2016 was less than compared to the neighbouring year, the mean revenue for 2016 is higher.
+            </h3>
+            </p>
+        </div>
+        <div class = "img-text-container">
+            <p id = "existing"><img src="exist_yr.jpg" height = "800px" width = "800px" style="float: left;"><h3>We can see there is an overlap between some customers for all the years.
+                If we were to check the revenue for these common customers in all the years, we can see the revenue from these existing customers is decreasing. The downgrade is not that 
+                steep for 2015 to 2016 but for 2016 to 2017 its a downfall.
             </h3>
             </p>
         </div>
@@ -65,12 +129,12 @@
           
             // Your web app's Firebase configuration
             const firebaseConfig = {
-              apiKey: "AIzaSyBX65CTfL002I-_PfK_hZLwrAiTWg_ParE",
-              authDomain: "stout-76208.firebaseapp.com",
-              projectId: "stout-76208",
-              storageBucket: "stout-76208.appspot.com",
-              messagingSenderId: "683529610883",
-              appId: "1:683529610883:web:fc69424011e607ffe8ddb6"
+              apiKey: "AIzaSyAE1m_8RdwUaxSjyjnPsbAbhvxUPrgKGCY",
+              authDomain: "stoutcase2.firebaseapp.com",
+              projectId: "stoutcase2",
+              storageBucket: "stoutcase2.appspot.com",
+              messagingSenderId: "475834925930",
+              appId: "1:475834925930:web:3007af91fea9944af21b13"
             };
           
             // Initialize Firebase

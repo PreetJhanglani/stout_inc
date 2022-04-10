@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Case Study 2</title>
+        <link rel="stylesheet" href="public/main.css">
+    </head>
+    <body>
+        <main>
+            <header>
+                <h2>Case Study 2 for Stout</h2>
+            </header>
+        <div>
+            <a href="https://www.dropbox.com/sh/xhy2fzjdvg3ykhy/AADAVKH9tgD_dWh6TZtOd34ia?dl=0">View the Dataset</a>
+            
+        </div>
+        </main>
+        <h4>There is 1 dataset(csv) with 3 years worth of customer orders. There are 4 columns in the csv dataset:
+            index, CUSTOMER_EMAIL(unique identifier as hash), Net_Revenue, and Year. We shall use this data to answer some questions for each year.</h4>
+        <div>
+            <table style="width:100%">
+                <tr>
+                    <th>Question</th>
+                    <th>2015</th>
+                    <th>2016</th>
+                    <th>2017</th>
+                </tr>
+                <tr>
+                    <td class = "question">Total revenue for the current year</td>
+                    <td class = "answer">29036749.189999994</td>
+                    <td class = "answer">25730943.59</td>
+                    <td class = "answer">31417495.030000016</td>
+                </tr>
+                <tr>
+                    <td class = "question">New Customer Revenue</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">18245491.01</td>
+                    <td class = "answer">28776235.039999995</td>
+                </tr>
+                <tr>
+                    <td class = "question">Existing Customer Growth</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">20335.459999999963</td>
+                    <td class = "answer">-4844192.59</td>
+                </tr>
+                <tr>
+                    <td class = "question">Revenue lost from attrition</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">3305805.599999994</td>
+                    <td class = "answer">-5686551.440000016</td>
+                </tr>
+                <tr>
+                    <td class = "question">Existing Customer Revenue Current Year</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">7485452.58</td>
+                    <td class = "answer">2641259.99</td>
+                </tr>
+                <tr>
+                    <td class = "question">Existing Customer Revenue Prior Year</td>
+                    <td class = "answer-N">N/A</td>
+                    <td class = "answer">7465117.12</td>
+                    <td class = "answer">2620648.65</td>
+                </tr>
+                <tr>
+                    <td class = "question">Total Customers Current Year</td>
+                    <td class = "answer">231294</td>
+                    <td class = "answer">204646</td>
+                    <td class = "answer">249987</td>
+                </tr>
+                <tr>
+                    <td class = "question">Total Customers Previous Year</td>
+                    <td class = "answer">N/A</td>
+                    <td class = "answer">231294</td>
+                    <td class = "answer">204646</td>
+                </tr>
+                <tr>
+                    <td class = "question">New Customers</td>
+                    <td class = "answer">N/A</td>
+                    <td class = "answer">145062</td>
+                    <td class = "answer">229028</td>
+                </tr>
+                <tr>
+                    <td class = "question">Lost Customers</td>
+                    <td class = "answer">N/A</td>
+                    <td class = "answer">171710</td>
+                    <td class = "answer">183687</td>
+                </tr>
+                </table>
+            </div>
+
+
+        <p>The Visualizations for this data set is as:</p>
+        <div class="img-text-container">
+            <p id = "new_revenue" ><img src="net_revenue.jpg" height = "800px" width = "800px" style="float: left;"><h3>This graph on the left compares the total net revenue 
+                for the years 2015, 2016, 2017. We can say the total net_revenue decreased in the year 2016 and then increased in 2017.
+            </h3>
+            </p>
+        </div>
+        <div class = "img-text-container">
+            <p id = "16_new_v/s_existing"><img src="16_new_exis.jpg" height = "800px" width = "800px" style="float: left;"><h3>This graph on left compares the total revenue for new and
+                existing customers in the year 2016. We can say that the revenue collected from existing customer is approx 41% that of new customer.
+            </h3>
+            </p>
+        </div>
+        <div class = "img-text-container">
+            <p id = "17_new_v/s_existing"><img src="17_new_exis.jpg" height = "800px" width = "800px" style="float: left;"><h3>This graph on left compares the total revenue for new and
+                existing customers in the year 2017. We can say that the revenue collected from existing customer is approx 9% that of new customer. This ratio is pretty low as compared 
+                to previous year 2016.
+            </h3>
+            </p>
+        </div>
+        <div class = "img-text-container">
+            <p id = "mean"><img src="mean_yr.jpg" height = "800px" width = "800px" style="float: left;"><h3>The graph on the left depicts the mean revenue for each customer per year.
+                Although the total revenue of 2016 was less than compared to the neighbouring year, the mean revenue for 2016 is higher.
+            </h3>
+            </p>
+        </div>
+        <div class = "img-text-container">
+            <p id = "existing"><img src="exist_yr.jpg" height = "800px" width = "800px" style="float: left;"><h3>We can see there is an overlap between some customers for all the years.
+                If we were to check the revenue for these common customers in all the years, we can see the revenue from these existing customers is decreasing. The downgrade is not that 
+                steep for 2015 to 2016 but for 2016 to 2017 its a downfall.
+            </h3>
+            </p>
+        </div>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyAJhG-eTMe81qnecdzEUxzpTAnkSMF2AMw",
+              authDomain: "stout-casestudy2.firebaseapp.com",
+              projectId: "stout-casestudy2",
+              storageBucket: "stout-casestudy2.appspot.com",
+              messagingSenderId: "963336628472",
+              appId: "1:963336628472:web:34a1f2a691385fc85a330d"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+          </script>
+    </body>
+    
+    </html>
+    
